@@ -1,12 +1,22 @@
-let loginButton = $(".login-wrapper > button"),
-	loginInput = $(".login-wrapper > .login"),
-	passwordInput = $(".login-wrapper > .password"),
-	loginWarningField = $(".login-wrapper > .warning-login"),
+let loginButton,
+	loginInput,
+	passwordInput,
+	loginWarningField,
+	validateLogin,
+	doLogin,
+	writeWarning,
+	searchLogin,
 	defaultDelay = 5000;
 
-$(loginButton).click(doLogin);
+window.onload = () => {
+	loginButton = $(".login-wrapper > button");
+	loginInput = $(".login-wrapper > .login");
+	passwordInput = $(".login-wrapper > .password");
+	loginWarningField = $(".login-wrapper > .warning-login");
+	$(loginButton).click(doLogin);
+};
 
-let validateLogin = (resolve, reject) => {
+validateLogin = (resolve, reject) => {
 	let login = $(loginInput).val(),
 		password = $(passwordInput).val();
 
@@ -21,20 +31,25 @@ let validateLogin = (resolve, reject) => {
 	}
 
 	$.get("login-db.json")
-		.then((data) => resolve(data, login, password), (jqXHR, textStatus, errorThrown) => writeWarning(errorThrown))
+		.then(
+			(data) => resolve({ db: data, login: login, password: password }),
+			(jqXHR, textStatus, errorThrown) => writeWarning(errorThrown)
+		);
 };
 
-let doLogin = () => {
+doLogin = () => {
 	(new Promise(validateLogin))
 		.then(searchLogin, (el) => $(el).removeClass('error'))
 };
 
-let writeWarning = (text, delayToDisappear) => {
+writeWarning = function (text, delayToDisappear) {
 	$(loginWarningField).text(text).removeClass('deactivated');
 	setTimeout(() => $(loginWarningField).addClass('deactivated'), delayToDisappear || defaultDelay);
 };
 
-let searchLogin = (jsonText, login, password) => {
-	let db = JSON.parse(jsonText);
-	(db.users.filter((user) => user.login == login && user.password == password).length || writeWarning("Incorrect login or password."));
+searchLogin = function (args) {
+	if (args.db.users.filter((user) => user.login == args.login && user.password == args.password).length)
+		alert("Success!");
+	else
+		writeWarning("Incorrect login or password.");
 }
