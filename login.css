@@ -1,0 +1,46 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+aside {
+	float: right;
+	width: 200px;
+	background-color: aliceblue;
+	border-radius: 5px;
+}
+
+.login-wrapper {
+	border-width: 1px;
+	border-color: gray;
+	width: 300px;
+	height: 200px;
+}
+
+.login-wrapper > button {
+	color: white;
+	font-weight: bold;
+	background-color: darkslateblue;
+	margin-top: 1px;
+}
+
+.login-wrapper > .login .password {
+	display: block;
+	margin-top: 50px;
+	width: 100px;
+	height: 20px;
+	margin-left: 50px;
+}
+
+.login-wrapper > .login.error .password.error {
+	border-color: darkred;
+}
+
+.warning-login {
+	display: block;
+	color: red;
+}
+
+.warning-login.deactivated {
+	display: none;
+}
+

@@ -1,0 +1,20 @@
+{
+	"users": [
+		{
+			"login": "isadora",
+			"password": "loredo"
+		},
+		{
+			"login": "tulio",
+			"password": "zuquim"
+		},
+		{
+			"login": "george",
+			"password": "melgaco"
+		},
+		{
+			"login": "admin",
+			"password": "admin"
+		}
+	]
+}
