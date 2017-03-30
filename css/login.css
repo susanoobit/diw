@@ -2,10 +2,11 @@
   font-family: Helvetica, Arial, sans-serif;
   padding: 0px;
   margin: 0px;
+  border-color: #0f001a;
 }
 
 body {
-	background-color: #eaccff;
+	background-color: #f4e6ff;
 }
 
 header {
@@ -25,28 +26,37 @@ nav .nav-item {
 	padding: 10px 20px;
 }
 
-nav ul li {
-	
-}
-
 section {
 	
 }
 
 article {
-	
+	background-color: #eaccff;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+article.highlight {
+	background-color: transparent;
+	width: 100%;
 }
 
 aside {
 	display: flex;
 	flex-direction: column;
-	width: 200px;
-	margin: 25px 10px 10px 10px;
+	width: 150px;
+    margin: 10px 10px 10px 5px;
+	background-color: #eaccff;
+	border-radius: 4px;
 }
 
 footer {
 	display: flex;
-	background-color: blue;
+	background-color: indigo;
+	justify-content: center;
+	color: #eaccff;
+	font-size: smaller;
+	padding: 5px;
 }
 
 .content {
@@ -55,50 +65,64 @@ footer {
 }
 
 .main-content {
-	margin: 10px 10px 25px 10px;
-	width: calc(100% - 290px);
-}
-
-.highlights {
-	background-color: #8600e6;
-	color: white;
-}
-
-.articles {
-	margin-top: 50px;
+	margin: 10px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
-.login-wrapper {
-	border-width: 1px;
-	border-color: gray;
-	width: 300px;
-	height: 200px;
+.highlights {
+	display: flex;
+	border-radius: 4px;
+	background-color: #8600e6;
+	color: white;
+	width: 100%;
 }
 
-.login-wrapper > button {
+.articles {
+	display: flex;
+	flex-direction: column;
+	border-radius: 4px;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.articles.deactivated {
+	display: none;
+}
+
+.login-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.login-wrapper button {
 	color: white;
 	font-weight: bold;
-	background-color: darkslateblue;
-	margin-top: 1px;
+	background-color: indigo;
+	margin: 5px 5px 1px 5px;
+	padding: 8px;
+	border-width: 0px;
+	border-radius: 6px;
 }
 
-.login-wrapper > .login .password {
-	display: block;
-	margin-top: 50px;
-	width: 100px;
-	height: 20px;
-	margin-left: 50px;
+.login-wrapper .login, .login-wrapper .password {
+	margin: 5px 5px 1px 5px;
+	padding: 8px;
+	border-width: 1.5px;
+	border-radius: 6px;
 }
 
-.login-wrapper > .login.error .password.error {
+.login-wrapper .login.error, .login-wrapper .password.error {
 	border-color: darkred;
 }
 
 .warning-login {
 	display: block;
-	color: red;
+	color: darkred;
+	font-size: smaller;
+	padding: 5px;
+	align-self: center;
 }
 
 .warning-login.deactivated {

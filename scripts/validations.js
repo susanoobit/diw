@@ -6,6 +6,7 @@ let loginButton,
 	doLogin,
 	writeWarning,
 	searchLogin,
+	articlesSection,
 	defaultDelay = 5000;
 
 window.onload = () => {
@@ -13,6 +14,7 @@ window.onload = () => {
 	loginInput = $(".login-wrapper > .login");
 	passwordInput = $(".login-wrapper > .password");
 	loginWarningField = $(".login-wrapper > .warning-login");
+	articlesSection = $(".articles.deactivated");
 	$(loginButton).click(doLogin);
 };
 
@@ -30,7 +32,7 @@ validateLogin = (resolve, reject) => {
 		setTimeout(() => reject(passwordInput), defaultDelay);
 	}
 
-	$.get("login-db.json")
+	$.get("db/login-db.json")
 		.then(
 			(data) => resolve({ db: data, login: login, password: password }),
 			(jqXHR, textStatus, errorThrown) => writeWarning(errorThrown)
@@ -48,8 +50,12 @@ writeWarning = function (text, delayToDisappear) {
 };
 
 searchLogin = function (args) {
-	if (args.db.users.filter((user) => user.login == args.login && user.password == args.password).length)
-		alert("Success!");
-	else
+	if (args.db.users.filter((user) => user.login == args.login && user.password == args.password).length) {
+		alert("Login Success!");
+		articlesSection.removeClass("deactivated");
+	}
+	else {
 		writeWarning("Incorrect login or password.");
+		(!articlesSection.hasClass("deactivated") && articlesSection.addClass("deactivated"));
+	}
 }
