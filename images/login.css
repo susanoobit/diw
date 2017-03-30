@@ -2,11 +2,56 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+body {
+	background-color: #eaccff;
+}
+
+header {
+	
+}
+
+nav {
+	display: flex;
+	background-color: indigo;
+	color: white;
+}
+
+section {
+	
+}
+
+article {
+	
+}
+
 aside {
+	display: flex;
+	flex-direction: column;
 	float: right;
 	width: 200px;
-	background-color: aliceblue;
-	border-radius: 5px;
+}
+
+footer {
+	display: flex;
+	background-color: blue;
+}
+
+.content {
+	
+}
+
+.main-content {
+	width: calc(100% - 200px);
+}
+
+.highlights {
+	background-color: #8600e6;
+	color: white;
+}
+
+.articles {
+	display: flex;
+	flex-direction: column;
 }
 
 .login-wrapper {
@@ -44,3 +89,6 @@ aside {
 	display: none;
 }
 
+.pokemon-list {
+
+}

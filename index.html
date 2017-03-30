@@ -1,20 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-	<meta charset="UTF-8">
-    <title>Lab-02</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="validations.js"></script>
-    <link type="text/css" rel="stylesheet preload" href="login.css">
-</head>
-<body>
-    <header></header>
-    <aside>
-        <div class="login-wrapper">
-            <input type="text" placeholder="Login" class="login"/>
-            <input type="text" placeholder="Password" class="password"/>
-            <button>Log In</button>
-            <div class="warning-login deactivated"></div>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Unicorn anonymous society.">
+        <meta name="author" content="Jose George">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unicorn</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/validations.js"></script>
+        <link type="text/css" rel="stylesheet preload" href="css/login.css">
+    </head>
+    <body>
+        <header>
+            <img src="images/unicorn.jpg" alt="Unicorn">
+        </header>
+        <nav>
+            <div class="nav-item">Página inicial</div>
+            <div class="nav-item">Artigos</div>
+            <div class="nav-item">Contato</div>
+        </nav>
+        <div class="content">
+            <div class="main-content">
+                <section class="highlights">
+                    <h2>DESTAQUES</h2>
+                    <p>Unicornios sao maravilhosos.</p>
+                </section>
+                <article class="articles">
+                    <h2>Como saber se o seu ovo de unicornio desenvolvera asas?</h2>
+                    <p>Unicornios nao tem asas. Entretanto, e' possivel conseguir uma especie fruto do cruzamento entre unicornios e pegasos. Como ambos sao descendentes de cavalos, basta conseguir um pegaso manso, ou seja, que nao fique voando com frequencia, para se envolver com um unicornio manso, ou seja, que nao seja ironico. Boa sorte!</p>
+                </article>
+            </div>
+            <aside>
+                <div class="login-wrapper">
+                    <input type="text" placeholder="Login" class="login"/>
+                    <input type="text" placeholder="Password" class="password"/>
+                    <button>Log In</button>
+                    <div class="warning-login deactivated"></div>
+                </div>
+                <section class="pokemon-list">
+                    <h2>Pokemons</h2>
+                    <p>Pokemons legais sao...</p>
+                </section>
+                <section class="digimon-list">
+                    <h2>Digimons</h2>
+                    <p>Digimons nao sao legais...</p>
+                </section>
+            </aside>
         </div>
-    </aside>
-</body>
+        <footer>
+            <p>Desenvolvido por Pig.</p>
+        </footer>
+    </body>
 </html>
